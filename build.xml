@@ -346,7 +346,7 @@
         <arg value="-Dfiles=${dist}/${ivy.module}-${ivy.revision}-sources.jar,${dist}/${ivy.module}-${ivy.revision}-javadoc.jar" />
         <arg value="-Dclassifiers=sources,javadoc" />
         <arg value="-Dtypes=jar,jar" />
-        <arg value="-Pgpg" />
+        <arg value="-Pswri-robotics" />
       </mvn:mvn>
     </sequential>
   </macrodef>
@@ -357,17 +357,17 @@
   </target>
 
   <target name="-deploy" depends="clean,dist">
-    <deploy repositoryid="sonatype-nexus-snapshots" repositoryurl="https://oss.sonatype.org/content/repositories/snapshots" />
+    <deploy repositoryid="oss.sonatype.org" repositoryurl="https://oss.sonatype.org/content/repositories/snapshots" />
   </target>
 
   <!-- before this, update project version from SNAPSHOT to RELEASE -->
-  <target name="stage" description="deploy to release repo" depends="install-maven-ant-tasks,test,forbidden-apis">
+  <target name="stage" description="deploy to release repo" depends="install-maven-ant-tasks,test">
     <property name="skip.jni" value="true" />
     <antcall target="-stage" />
   </target>
 
   <target name="-stage" depends="clean,dist">
-    <deploy repositoryid="sonatype-nexus-staging" repositoryurl="https://oss.sonatype.org/service/local/staging/deploy/maven2" />
+    <deploy repositoryid="oss.sonatype.org" repositoryurl="https://oss.sonatype.org/service/local/staging/deploy/maven2" />
   </target>
 
 </project>

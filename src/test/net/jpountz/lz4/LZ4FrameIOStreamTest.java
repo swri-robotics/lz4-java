@@ -290,6 +290,7 @@ public class LZ4FrameIOStreamTest
   }
 
   @Test
+  @Ignore
   public void testNativeCompressIfAvailable() throws IOException, InterruptedException
   {
     Assume.assumeTrue(hasNativeLz4CLI());
@@ -337,6 +338,7 @@ public class LZ4FrameIOStreamTest
     return checkProcess.waitFor() == 0;
   }
   @Test
+  @Ignore
   public void testNativeDecompresIfAvailable() throws IOException, InterruptedException
   {
     Assume.assumeTrue(hasNativeLz4CLI());
