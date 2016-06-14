@@ -1,5 +1,10 @@
 # Change log
 
+## 1.4.0
+
+ - [#61](https://github.com/jpountz/lz4-java/pull/61)
+   Add basic LZ4 Frame v1.5.0 support (Charles Allen)
+
 ## 1.3.0
 
  - lz4 r123
