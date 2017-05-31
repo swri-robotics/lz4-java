@@ -13,7 +13,7 @@
 -->
 
 <ivy-module version="2.0">
-  <info organisation="com.github.swri-robotics" module="lz4" revision="1.4.0" />
+  <info organisation="com.github.swri-robotics" module="lz4" revision="1.5.0" />
 
   <configurations defaultconfmapping="default->default">
     <conf name="default" />
